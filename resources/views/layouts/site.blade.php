@@ -78,7 +78,7 @@
             position: absolute; inset: 0;
             background:
                 linear-gradient(180deg, rgba(15,26,23,.18) 0%, rgba(15,26,23,.66) 62%, rgba(15,26,23,.92) 100%),
-                url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+                url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             animation: heroZoom 18s ease-in-out infinite alternate;
         }
         @keyframes heroZoom {
@@ -187,7 +187,7 @@
             padding: 3.5rem 0 2rem;
             background:
                 linear-gradient(120deg, rgba(26,61,50,.92), rgba(61,122,101,.78)),
-                url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80') center/cover;
+                url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=1600&q=80') center/cover;
             color: #fff;
         }
         .page-hero h1 { margin: 0 0 .5rem; font-size: clamp(2rem, 4vw, 3rem); }

@@ -22,7 +22,7 @@ Production-ready Laravel 13 + Filament 3 website, ERP, and AI toolkit for a Twin
 - Livewire + Alpine.js + Tailwind (Filament)
 - MySQL or SQLite (demo)
 - Spatie Laravel Permission
-- OpenAI PHP Laravel SDK with Gemini fallback config
+- OpenAI / Gemini via Laravel Http client (FAQ demo fallback when keys empty)
 
 ## 🚀 Installation
 
@@ -50,13 +50,13 @@ Optional AI keys in `.env`: `OPENAI_API_KEY`, `GEMINI_API_KEY`.
 
 ## 🖼️ Screenshots / Visual Dashboard
 
-![Modern home exterior cladding](https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80)
+![Fiber cement clad suburban home](https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80)
 
-![Clean residential facade](https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80)
+![Board-and-batten exterior elevation](https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=1200&q=80)
 
-![Suburban home siding finish](https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80)
+![Modern lap siding residence](https://images.unsplash.com/photo-1583608205776-bfd36c7a4c7a?auto=format&fit=crop&w=1200&q=80)
 
-![Contemporary exterior architecture](https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80)
+![Twin Cities style home facade](https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&w=1200&q=80)
 
 ## 🌐 Live Demo
 
@@ -85,4 +85,3 @@ Delivery Mode: Async-ready, Slack, Discord, Jira, GitHub, and production-first a
 | 📧 Direct Email | me@imrandev.bd | Send Email ↗ |
 | 🐦 X (Twitter) | @imrandev_bd | Follow ↗ |
 | 📺 YouTube Tech | @ImranDevBD | Subscribe ↗ |
-```

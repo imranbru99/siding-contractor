@@ -33,7 +33,7 @@
         <p><a href="tel:+16125550184">(612) 555-0184</a><br>
         <a href="mailto:hello@northclad.example">hello@northclad.example</a></p>
         <p>Prefer chat? <a href="https://wa.me/{{ config('services.whatsapp.number') }}" target="_blank" rel="noopener"><strong>WhatsApp Northclad</strong></a></p>
-        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Clean residential exterior ready for siding refresh" style="border-radius:16px;margin-top:1rem;width:100%;min-height:240px;object-fit:cover;">
+        <img src="https://images.unsplash.com/photo-1598228723791-868eec698550?auto=format&fit=crop&w=1200&q=80" alt="Clean residential exterior ready for siding refresh" style="border-radius:16px;margin-top:1rem;width:100%;min-height:240px;object-fit:cover;">
     </div>
 </div></section>
 @endsection

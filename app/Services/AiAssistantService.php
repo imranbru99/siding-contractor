@@ -4,7 +4,6 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use OpenAI\Laravel\Facades\OpenAI;
 use Throwable;
 
 class AiAssistantService
@@ -62,17 +61,10 @@ class AiAssistantService
 
         if ($this->hasOpenAiKey()) {
             try {
-                $system = $this->systemPrompt($context);
-                $result = OpenAI::chat()->create([
-                    'model' => config('services.ai.openai_model', 'gpt-4o-mini'),
-                    'messages' => [
-                        ['role' => 'system', 'content' => $system],
-                        ['role' => 'user', 'content' => $message],
-                    ],
-                    'temperature' => 0.4,
-                ]);
-
-                return trim($result->choices[0]->message->content ?? '') ?: $this->faqReply($message);
+                $reply = $this->openaiReply($message, $context);
+                if ($reply !== null) {
+                    return $reply;
+                }
             } catch (Throwable) {
                 // Fall through to Gemini, then FAQ.
             }
@@ -160,12 +152,34 @@ class AiAssistantService
 
     protected function hasOpenAiKey(): bool
     {
-        return filled(config('openai.api_key')) || filled(env('OPENAI_API_KEY'));
+        return filled(config('services.ai.openai_key'));
     }
 
     protected function hasGeminiKey(): bool
     {
         return filled(config('services.ai.gemini_key'));
+    }
+
+    protected function openaiReply(string $message, string $context): ?string
+    {
+        $response = Http::withToken(config('services.ai.openai_key'))
+            ->timeout(30)
+            ->post('https://api.openai.com/v1/chat/completions', [
+                'model' => config('services.ai.openai_model', 'gpt-4o-mini'),
+                'messages' => [
+                    ['role' => 'system', 'content' => $this->systemPrompt($context)],
+                    ['role' => 'user', 'content' => $message],
+                ],
+                'temperature' => 0.4,
+            ]);
+
+        if (! $response->successful()) {
+            return null;
+        }
+
+        $text = data_get($response->json(), 'choices.0.message.content');
+
+        return filled($text) ? trim((string) $text) : null;
     }
 
     protected function geminiReply(string $message, string $context): ?string
@@ -186,6 +200,8 @@ class AiAssistantService
             return null;
         }
 
-        return data_get($response->json(), 'candidates.0.content.parts.0.text');
+        $text = data_get($response->json(), 'candidates.0.content.parts.0.text');
+
+        return filled($text) ? trim((string) $text) : null;
     }
 }

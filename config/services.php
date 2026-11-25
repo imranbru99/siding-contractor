@@ -36,13 +36,14 @@ return [
     ],
 
     'ai' => [
+        'openai_key' => env('OPENAI_API_KEY'),
         'openai_model' => env('OPENAI_MODEL', 'gpt-4o-mini'),
         'gemini_key' => env('GEMINI_API_KEY'),
         'gemini_model' => env('GEMINI_MODEL', 'gemini-1.5-flash'),
     ],
 
     'whatsapp' => [
-        'number' => env('WHATSAPP_NUMBER', '13035550192'),
+        'number' => env('WHATSAPP_NUMBER', '16125550184'),
     ],
 
 ];

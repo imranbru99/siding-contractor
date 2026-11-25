@@ -36,7 +36,7 @@
 
 <section style="padding-top:0;">
     <div class="wrap about-split">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80" alt="Modern home exterior with clean siding lines">
+        <img src="https://images.unsplash.com/photo-1583608205776-bfd36c7a4c7a?auto=format&fit=crop&w=1400&q=80" alt="Modern home exterior with clean siding lines">
         <div>
             <div class="eyebrow" style="color:var(--cl-amber);">About Northclad</div>
             <h2 style="color:var(--cl-slate);">Built for Minnesota weather</h2>
@@ -55,7 +55,7 @@
         </div>
         <div class="visual-board">
             <div class="dash-preview">
-                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1400&q=80" alt="Suburban home with freshly finished exterior">
+                <img src="https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&w=1400&q=80" alt="Suburban home with freshly finished exterior">
             </div>
             <div style="display:grid;gap:.8rem;">
                 <div class="metric"><b>{{ $stats['jobs'] }}</b> tracked siding jobs in demo ERP</div>
